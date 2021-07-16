@@ -14,7 +14,7 @@ class DanhmucTruyenController extends Controller
      */
     public function index()
     {
-        $danhmuctruyen = DanhmucTruyen::all();
+        $danhmuctruyen = DanhmucTruyen::orderBy('id','DESC')->get();
 
         return view('admincp.danhmuctruyen.index')->with(compact('danhmuctruyen'));
 

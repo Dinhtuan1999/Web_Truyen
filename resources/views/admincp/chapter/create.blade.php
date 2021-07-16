@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Thêm Truyện</div>
+                    <div class="card-header">Thêm Chapter Truyện</div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -24,37 +24,37 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form method="POST" action="{{route('truyen.store')}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('chapter.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tên truyện</label>
-                                <input type="text" class="form-control" onkeyup="ChangeToSlug();" value="{{old('tentruyen')}}" name="tentruyen" id="slug"
-                                       aria-describedby="emailHelp" placeholder="Tên truyện...">
+                                <label for="exampleInputEmail1">Tên chapter</label>
+                                <input type="text" class="form-control" onkeyup="ChangeToSlug();" value="{{old('tieude')}}" name="tieude" id="slug"
+                                       aria-describedby="emailHelp" placeholder="Tên chapter...">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Slug truyện</label>
-                                <input type="text" class="form-control" value="{{old('slug_truyen')}}" name="slug_truyen" id="convert_slug"
-                                       aria-describedby="emailHelp" placeholder="Slug truyện...">
+                                <label for="exampleInputEmail1">Slug chapter</label>
+                                <input type="text" class="form-control" value="{{old('slug_chapter')}}" name="slug_chapter" id="convert_slug"
+                                       aria-describedby="emailHelp" placeholder="Slug chapter...">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tóm tắt truyện</label>
-                                <textarea type="text" name="tomtat" class="form-control"  rows="5" style="resize: none" placeholder="Tóm tắt truyện..."></textarea>
+                                <label for="exampleInputEmail1">Tóm tắt chapter truyện</label>
+                                <textarea type="text" name="tomtat" class="form-control"  rows="5" style="resize: none" placeholder="Tóm tắt chapter..."></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Danh mục truyện</label>
-                                <select class="custom-select" name="danhmuc">
-                                    @foreach($danhmuc as $key=> $muc)
-                                    <option value="{{$muc->id}}">{{$muc->tendanhmuc}}</option>
+                                <label for="exampleInputEmail1">Nội dung chapter truyện</label>
+                                <textarea type="text" name="noidung"  class="form-control" rows="5" style="resize: none" placeholder="Nội dung chapter..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"> Truyện</label>
+                                <select class="custom-select" name="truyen_id">
+                                    @foreach($truyen as $key=> $truyens)
+                                        <option value="{{$truyens->id}}">{{$truyens->tentruyen}}</option>
                                     @endforeach
                                 </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Hình ảnh truyện</label>
-                                <input type="file" class="form-control"  name="hinhanh" >
                             </div>
 
                             <div class="form-group">
@@ -66,7 +66,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" name="themtruyen" class="btn btn-primary">Thêm</button>
+                            <button type="submit" name="themchapter" class="btn btn-primary">Thêm</button>
                         </form>
 
                     </div>

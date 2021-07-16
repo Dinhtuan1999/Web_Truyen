@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DanhmucTruyenController;
 use App\Http\Controllers\TruyenController;
+use App\Http\Controllers\ChapterControler;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/danhmuc', DanhmucTruyenController::class);
 
 Route::resource('/truyen', TruyenController::class);
+
+Route::resource('/chapter', ChapterControler::class);
 
 
 
