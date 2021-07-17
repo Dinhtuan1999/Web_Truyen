@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use  App\Models\Chapter;
 use App\Models\Truyen;
-class ChapterControler extends Controller
+class ChapterController extends Controller
 {
     /**
      * Display a listing of the resource.
