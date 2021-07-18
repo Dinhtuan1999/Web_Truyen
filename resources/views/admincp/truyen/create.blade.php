@@ -39,6 +39,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Tác giả</label>
+                                <input type="text" class="form-control"  value="{{old('tacgia')}}" name="tacgia"
+                                       aria-describedby="emailHelp" placeholder="Tên tác giả...">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Tóm tắt truyện</label>
                                 <textarea type="text" name="tomtat" class="form-control"  rows="5" style="resize: none" placeholder="Tóm tắt truyện..."></textarea>
                             </div>

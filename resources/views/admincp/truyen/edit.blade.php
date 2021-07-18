@@ -40,6 +40,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Tác giả</label>
+                                <input type="text" class="form-control" onkeyup="ChangeToSlug();" value="{{$truyen->tacgia}}" name="tacgia"
+                                        aria-describedby="emailHelp" placeholder="Tên tác giả...">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Tóm tắt truyện</label>
                                 <input type="text" class="form-control" value="{{$truyen-> tomtat}}" name="tomtat" id="exampleInputEmail1"
                                        aria-describedby="emailHelp" placeholder="Tóm tắt truyện...">

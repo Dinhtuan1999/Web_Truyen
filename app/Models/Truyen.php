@@ -11,7 +11,7 @@ class Truyen extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'tentruyen' ,'slug_truyen', 'tomtat' ,'kichhoat','hinhanh','danhmuc_id'
+        'tentruyen' ,'slug_truyen', 'tomtat' ,'kichhoat','hinhanh','danhmuc_id','tacgia'
     ];
     protected $primaryKey = 'id';
 

@@ -19,89 +19,71 @@
             <div class="row">
                 <div class="col-md-3">
                     <img class=" card-img-top" width="100%" height="225"
-                         src="{{asset('public/uploads/truyen/crush5.jpg')}}">
+                         src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}">
                 </div>
 
                 <div class="col-md-9">
                     <style type="text/css">
-                        .info{
+                        .info {
                             list-style: none;
                         }
                     </style>
                     <ul class="info">
-                        <li> Tac gia : tuan</li>
-                        <li> the loai : tuan</li>
+                        <li>Ten sach : {{$truyen->tentruyen}}</li>
+                        <li> Tac gia : {{$truyen->tacgia}}</li>
+                        <li> Danh muc truyen : <a href="{{url('danh-muc/'.$truyen->danhmuctruyen->slug_danhmuc)}}">{{$truyen->danhmuctruyen->tendanhmuc}}</a></li>
                         <li> so chapter : 123</li>
                         <li> so luot xem : 123</li>
                         <li><a href="">xem muc luc</a></li>
-                        <li><a href="" class="btn btn-primary">doc online</a></li>
+                        @if($chapter_dau)
+                            <li><a href="{{url('xem-chapter/'.$chapter_dau->slug_chapter)}}" class="btn btn-primary">doc online</a></li>
+                        @else
+                            <li><a href="" class="btn btn-danger"> Hien tai chua co chuong de doc</a></li>
+                        @endif
+
                     </ul>
                 </div>
             </div>
             <div class="col-md-12">
-                <p>
-                    Bạn trai bị cướp, cha mẹ xem thường sỉ nhục, tống cô ra nước ngoài du học không quản không hỏi tới! Tất cả mọi người đều cho rằng cô vị vứt bỏ chỉ có thể tự sinh tự diệt….
-                    mới lạ! 5 năm sau Ninh Tịch hoa lệ quay về, cùng với tổng tài bá đạo Lục Đình Kiêu viết một đoạn nhân duyên hoan hỷ, vợ chồng liên thủ giẫm tất cả kẻ thù dưới chân! Cùng xem
-                    con đường ảnh hậu truyền kì của cựu lính đánh thuê Ninh Tịch! Cải biên từ tiểu thuyết [Cho em muôn trượng hào quang]
-                </p>
+                <p>{!! $truyen->tomtat !!} </p>
             </div>
 
             <hr>
             <h4>Muc Luc</h4>
-                <ul class="mucluc">
-                    <li><a href="">phan 1</a></li>
-                    <li><a href="">phan 1</a></li>
-                    <li><a href="">phan 1</a></li>
-                    <li><a href="">phan 1</a></li>
-                    <li><a href="">phan 1</a></li>
-                    <li><a href="">phan 1</a></li>
-                </ul>
+            <ul class="mucluc">
+                @php
+                    $mucluc = count($chapter);
+                @endphp
+                @if($mucluc > 0)
+                    @foreach($chapter as $key => $chap)
+                        <li><a href="{{url('xem-chapter/'.$chap->slug_chapter)}}">{{$chap->tieude}}</a></li>
+                    @endforeach
+                @else
+                    <li>Muc luc dang cap nhat ...</li>
+                @endif
+            </ul>
             <h4>sach cung the loai</h4>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img class=" card-img-top" width="100%" height="225"
-                             src="{{asset('public/uploads/truyen/crush5.jpg')}}">
-                        <div class="card-body">
-                            <h5>This is a wider card with supporting</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                @foreach($cungdanhmuc as $key => $value)
+                    <div class="col-md-3">
+                        <div class="card mb-3 shadow-sm">
+                            <img class=" card-img-top" width="100%" height="225"
+                                 src="{{asset('public/uploads/truyen/'.$value->hinhanh)}}">
+                            <div class="card-body">
+                                <h5>{{$value->tentruyen}}</h5>
+                                <p class="card-text"> {{$value->tomtat}}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{{url('xem-truyen/'.$value->slug_truyen)}}"
+                                           class="btn btn-sm btn-outline-secondary">Đọc ngay</a>
+                                        <a class="btn btn-sm btn-outline-secondary"><i class="fas fa-eye"></i>1</a>
+                                    </div>
+                                    <small class="text-muted">9 mins ago</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img class=" card-img-top" width="100%" height="225"
-                             src="{{asset('public/uploads/truyen/crush5.jpg')}}">
-                        <div class="card-body">
-                            <h5>This is a wider card with supporting</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img class=" card-img-top" width="100%" height="225"
-                             src="{{asset('public/uploads/truyen/crush5.jpg')}}">
-                        <div class="card-body">
-                            <h5>This is a wider card with supporting</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card mb-3 shadow-sm">
-                        <img class=" card-img-top" width="100%" height="225"
-                             src="{{asset('public/uploads/truyen/crush5.jpg')}}">
-                        <div class="card-body">
-                            <h5>This is a wider card with supporting</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>
