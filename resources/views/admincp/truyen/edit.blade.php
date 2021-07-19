@@ -61,6 +61,15 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Thể loại truyện</label>
+                                <select class="custom-select" name="theloai">
+                                    @foreach($theloai as $key=> $theloais)
+                                        <option {{ $theloais->id == $truyen->theloai_id ? 'selected' : ''  }} value="{{$theloais->id}}">{{$theloais->tentheloai}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Hình ảnh truyện</label>
                                 <input type="file" class="form-control-file"  name="hinhanh" >
                                 <img src="{{ asset('public/uploads/truyen/'. $truyen->hinhanh)}}" height="250" width="150" alt="">

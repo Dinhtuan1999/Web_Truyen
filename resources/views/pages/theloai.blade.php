@@ -8,13 +8,13 @@
 @section('content')
 
     <!-------------------------Sach mới cập nhật----------------------------->
-    <h3>{{$tendanhmuc}}</h3>
+    <h3>{{$tentheloai}}</h3>
     <div class="album py-5 bg-light">
         <div class="container">
 
             <div class="row">
                 @php
-                  echo $count = count($truyen);
+                    echo $count = count($truyen);
                 @endphp
                 @if($count == 0)
                     <div class="col-md-12">
@@ -48,7 +48,7 @@
                         </div>
                     @endforeach
 
-                    @endif
+                @endif
 
 
             </div>

@@ -6,7 +6,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Liệt Kê Truyện</div>
 
@@ -17,7 +17,7 @@
                             </div>
                         @endif
 
-                            <table class="table table-striped">
+                            <table class="table table-striped table-responsive">
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -26,6 +26,7 @@
                                     <th scope="col">Tác giả</th>
                                     <th scope="col">Tóm tắt</th>
                                     <th scope="col">Danh mục</th>
+                                    <th scope="col">Thể loại</th>
                                     <th scope="col">Hình ảnh</th>
                                     <th scope="col">Kích Hoạt</th>
                                     <th scope="col">Quản Lý</th>
@@ -40,6 +41,7 @@
                                         <td>{{$truyen->tacgia}}</td>
                                         <td>{{$truyen->tomtat}}</td>
                                         <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
+                                        <td>{{$truyen->theloai->tentheloai}}</td>
                                         <td><img src="{{asset('public/uploads/truyen/'. $truyen->hinhanh)}}" height="250" width="150" alt=""></td>
                                         <td>
                                             @if ($truyen->kichhoat ==1)

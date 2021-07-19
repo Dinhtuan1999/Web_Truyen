@@ -47,8 +47,8 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nội dung chapter truyện</label>
-                                <input type="text" class="form-control" value="{{$chapter-> noidung}}" name="noidung" id="exampleInputEmail1"
-                                       aria-describedby="emailHelp" placeholder="Tóm tắt truyện...">
+                                <textarea  id="noidung_chapter" name="noidung"  class="form-control" rows="5" style="resize: none" placeholder="Nội dung chapter...">{{$chapter->noidung}}</textarea>
+
                             </div>
 
                             <div class="form-group">
